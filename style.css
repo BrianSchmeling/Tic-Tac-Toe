@@ -1,0 +1,36 @@
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 50px;
+    text-decoration: underline;
+}
+
+#player-turn {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#game-board {
+    margin: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 450px;
+    height: 450px;
+    border: 5px black solid
+}
+
+.container {
+    text-align: center;
+}
+
+#reset {
+    margin-left: auto;
+    margin-top: 50px;
+    width: 150px;
+    height: 50ps;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+}
