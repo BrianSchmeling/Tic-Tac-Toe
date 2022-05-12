@@ -34,3 +34,7 @@ h1 {
     color: white;
     font-size: 30px;
 }
+
+.mouseover {
+    border: 5px yellow solid
+}
