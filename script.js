@@ -1,9 +1,12 @@
 const gameBoard = document.querySelector("#game-board")
+const winner = document.querySelector("#winner")
 // console.log(square)
 // console.log(gameBoard)
 
 let counter = 1
 let winArr = ["0","0","0","0","0","0","0","0","0"]
+let redWins = 0
+let blueWins = 0
 
 function createGrid() {
     let arrPlace = 0
@@ -75,8 +78,6 @@ function resetGame() {
 
 resetBtn.addEventListener("click", resetGame)
 
-
-
 function checkWinner() {
     if (winArr[0] === "red" && winArr[1] === "red" && winArr[2] === "red" ||
     winArr[3] === "red" && winArr[4] === "red" && winArr[5] === "red" ||
@@ -87,6 +88,8 @@ function checkWinner() {
     winArr[0] === "red" && winArr[4] === "red" && winArr[8] === "red" ||
     winArr[2] === "red" && winArr[4] === "red" && winArr[6] === "red"
     ){
+        redWins++
+        winner.innerText = `Red's Score: ${redWins} | Blue's Score: ${blueWins}`
         alert("Red Wins!")
         // resetGame()
     } else if (winArr[0] === "blue" && winArr[1] === "blue" && winArr[2] === "blue" ||
@@ -98,8 +101,12 @@ function checkWinner() {
     winArr[0] === "blue" && winArr[4] === "blue" && winArr[8] === "blue" ||
     winArr[2] === "blue" && winArr[4] === "blue" && winArr[6] === "blue"
     ){
+        blueWins++
+        winner.innerText = `Red's Score: ${redWins} | Blue's Score: ${blueWins}`
         alert("Blue Wins!")
+        resetGame()
     } else if (winArr[0] !== "0" && winArr[1] !== "0" && winArr[2] !== "0" && winArr[3] !== "0" && winArr[4] !== "0" !== "0" && winArr[5] !== "0" && winArr[6] !== "0" && winArr[7] !== "0" && winArr[8] !== "0") {
         alert("It's a tie!")
+        // resetGame()
     }
 }
